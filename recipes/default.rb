@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: heavywater
+# Cookbook:: heavywater
 # Recipe:: default
 #
-# Copyright 2011, Heavy Water Software Inc.
+# Copyright:: 2011, Heavy Water Software Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,13 +18,13 @@
 #
 
 %w( libxml2-dev libxslt1-dev ).each do |pkg|
-  r = package( pkg ) { action :nothing }
-  r.run_action( :install )
+  r = package(pkg) { action :nothing }
+  r.run_action(:install)
 end
 
-fog = gem_package( "fog" ) { action :nothing }
-fog.run_action( :install )
+fog = gem_package('fog') { action :nothing }
+fog.run_action(:install)
 
-require "rubygems"
+require 'rubygems'
 Gem.clear_paths
-require "fog"
+require 'fog'
